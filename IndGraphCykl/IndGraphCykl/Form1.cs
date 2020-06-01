@@ -19,22 +19,22 @@ namespace IndGraphCykl
             InitializeComponent();
         }
 
-        bool dfs(int key, int[,] a, int[] was, int n)
+        bool dfs(int key, int[,] a, int[] was, int n, int pred)
         {
             was[key] = 1;
             for (int i = 0; i < n; i++)
             {
                 if (a[key,i]!=0)
                 {
-                    if (was[i] == 0)
+                    if (was[i] == 0 && pred != i)
                     {
-                        if (dfs(i,a,was,n))
+                        if (dfs(i,a,was,n, key))
                             return true;
                     }
-                    else if (was[i] == 1)
-                    {
-                        return true;
-                    }
+                    //else if (was[i] == 1 && pred!=i)
+                    //{
+                    //    return true;
+                    //}
                 }
             }
             was[key] = 2;
@@ -82,15 +82,43 @@ namespace IndGraphCykl
                 was[i] = 0;
             }
             int cykles = 0;
-
-            for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
             {
-                
-                if (was[i] == 0 && dfs(i,matrData,was,n))
+                for (int i = 0; i < n; i++)
                 {
-                    cykles++;
+                    if (was[i] != 2 && dfs(i, matrData, was, n, -1))
+                    {
+                        cykles++;
+                    }
+                }
+                for (int i = 0; i < n; i++)
+                {
+                    was[i] = 0;
                 }
             }
+            temp = Convert.ToString(cykles);
+            cykleNumber.AppendText(temp);
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "txt files |*.txt";
+            if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK && saveFileDialog1.FileName.Length > 0)
+            {
+
+                using (FileStream fstream = new FileStream(saveFileDialog1.FileName, FileMode.OpenOrCreate))
+                {
+
+                    fstream.SetLength(0);
+                    byte[] array = System.Text.Encoding.Default.GetBytes(temp);
+                    fstream.Write(array, 0, array.Length);
+                }
+
+                MessageBox.Show("Сохранено", "Завершение работы", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Ошибка. Повторите попытку", "Завершение работы", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            saveFileDialog1.FileName = "";
 
         }
     }

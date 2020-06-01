@@ -1,0 +1,10 @@
+C:\Users\Dima\Documents\GitHub\Kostruir\IndGraphCykl\IndGraphCykl\bin\Debug\IndGraphCykl.exe.config
+C:\Users\Dima\Documents\GitHub\Kostruir\IndGraphCykl\IndGraphCykl\bin\Debug\IndGraphCykl.exe
+C:\Users\Dima\Documents\GitHub\Kostruir\IndGraphCykl\IndGraphCykl\bin\Debug\IndGraphCykl.pdb
+C:\Users\Dima\Documents\GitHub\Kostruir\IndGraphCykl\IndGraphCykl\obj\Debug\IndGraphCykl.csprojAssemblyReference.cache
+C:\Users\Dima\Documents\GitHub\Kostruir\IndGraphCykl\IndGraphCykl\obj\Debug\IndGraphCykl.Form1.resources
+C:\Users\Dima\Documents\GitHub\Kostruir\IndGraphCykl\IndGraphCykl\obj\Debug\IndGraphCykl.Properties.Resources.resources
+C:\Users\Dima\Documents\GitHub\Kostruir\IndGraphCykl\IndGraphCykl\obj\Debug\IndGraphCykl.csproj.GenerateResource.cache
+C:\Users\Dima\Documents\GitHub\Kostruir\IndGraphCykl\IndGraphCykl\obj\Debug\IndGraphCykl.csproj.CoreCompileInputs.cache
+C:\Users\Dima\Documents\GitHub\Kostruir\IndGraphCykl\IndGraphCykl\obj\Debug\IndGraphCykl.exe
+C:\Users\Dima\Documents\GitHub\Kostruir\IndGraphCykl\IndGraphCykl\obj\Debug\IndGraphCykl.pdb
