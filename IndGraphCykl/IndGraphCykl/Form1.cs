@@ -64,15 +64,31 @@ namespace IndGraphCykl
             double t = Math.Sqrt((temp.Length + 1) / 2);
             int n = (int)t;
             
-            string[] matrInfo = temp.Split(' ', '\n');
+            string[] temp2 = temp.Split(' ', '\n');
             int[,] matrData = new int[n, n];
             int q = 0;
             for (int j = 0; j < n; j++)
             {
                 for (int k = 0; k < n; k++)
                 {
-                    matrData[j, k] = Int32.Parse(matrInfo[q]);
+                    matrData[j, k] = Int32.Parse(temp2[q]);
                     q++;
+                }
+            }
+
+            int[] was = new int[n];
+            for(int i = 0; i<n;i++)
+            {
+                was[i] = 0;
+            }
+            int cykles = 0;
+
+            for (int i = 0; i < n; i++)
+            {
+                
+                if (was[i] == 0 && dfs(i,matrData,was,n))
+                {
+                    cykles++;
                 }
             }
 
