@@ -31,12 +31,13 @@ namespace IndGraphCykl
                         if (dfs(i,a,was,n, key))
                             return true;
                     }
-                    //else if (was[i] == 1 && pred!=i)
-                    //{
-                    //    return true;
-                    //}
+                    else if (was[i] == 1 && pred != i)
+                    {
+                        return true;
+                    }
                 }
             }
+            
             was[key] = 2;
             return false;
         }
